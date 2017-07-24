@@ -1,0 +1,25 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:csvsplitter
+    username: sa
+    password:
+  h2:
+    console:
+      enabled: true
+
+app:
+  split:
+    importTableName: T_IMPORT
+    inputFile: /tmp/test-data.csv
+    outputDirectory: /tmp/csv-split-output
+    splitByType: COLUMN_NAME
+    orderByType: COLUMN_NAME
+    inputCsv:
+      fieldSeparator: ';'
+    outputCsv:
+      fieldSeparator: ';'
+
+
+logging:
+  level.com.github.bilak: DEBUG
+
